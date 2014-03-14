@@ -1,0 +1,20 @@
+(ql:quickload :qt)
+(in-package :qt)
+(named-readtables:in-readtable :qt)
+
+(defclass status-bar-app () 
+  () 
+
+  (:metaclass qt-class)
+  (:qt-superclass "QWidget"))
+
+(defmethod initialize-instance :after 
+  ((instance status-bar-app) &key)
+   (new instance) 
+   (init-ui instance)) 
+
+(defmethod init-ui ((instance status-bar-app)) 
+  )
+
+(make-qapplication)
+(with-main-window (window (make-instance 'status-bar-app)))
