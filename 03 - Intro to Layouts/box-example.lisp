@@ -23,7 +23,7 @@
 	(name-button instance) (#_new QPushButton "Click!" instance)
 	(name-label instance) (#_new QLabel "" instance))
   (let ((box (#_new QVBoxLayout instance))) 
-    (#_addWidget box (#_new QLabel "What is your name?" instance) 0 0)
+    (#_addWidget box (#_new QLabel "What is your name?" instance))
     (#_addWidget box (name-edit instance))
     (#_addWidget box (name-button instance))
     (#_addWidget box (name-label instance))
